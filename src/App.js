@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 import { Animated } from "react-animated-css";
-import { FiAlertTriangle, FiEdit3, FiPlus } from 'react-icons/fi';
+import { FiAlertTriangle, FiEdit3, FiPlus, FiGithub } from 'react-icons/fi';
 
 import './App.scss';
 
@@ -182,7 +182,7 @@ class App extends React.Component {
                   {this.state.isEmpty ? <Animated animationIn="bounceIn"><p className="alert"><FiAlertTriangle className="alert_icon" />Please fill up both inputs</p> </Animated> : null}
                   {this.state.isEmptyEdit ? <Animated animationIn="bounceIn"><p className="alert"><FiAlertTriangle className="alert_icon" />Don't do empty fields</p> </Animated> : null}
                 </div>
-
+                <p className="author_name"><FiGithub/><b>Jacob</b>Pastorek.</p>
               </div>
             </div>
             <div className="col-md-6 right_side">
