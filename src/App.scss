@@ -1,6 +1,10 @@
 body {
   background: lavender;
 }
+*{
+  outline:none !important;
+  -webkit-appearance: none !important;
+}
 
 .App {
   overflow: hidden;

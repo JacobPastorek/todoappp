@@ -21,6 +21,7 @@ class App extends React.Component {
     isEmptyEdit: false,
     currentTodoId: '',
     isEditing: false,
+    isDeleting: false,
   }
 
 
@@ -67,7 +68,9 @@ class App extends React.Component {
   }
 
   deleteItemHandler = (id) => {
-    if (this.state.isEditing) {
+    if(this.state.isDeleting){
+    return;
+    }else if (this.state.isEditing) {
       return;
     } else {
       const newArray = [...this.state.toDoList];
@@ -75,10 +78,12 @@ class App extends React.Component {
       currentItem.isVisible = false;
       this.setState({ currentItem: currentItem })
       if (currentItem.isVisible === false) {
+        this.setState({ isDeleting: true})
         setTimeout(
           function () {
             newArray.splice(id, 1);
             this.setState({ toDoList: newArray });
+            this.setState({ isDeleting: false})
           }.bind(this), 1000
         );
       }
